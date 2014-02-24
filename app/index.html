@@ -1,0 +1,87 @@
+<!doctype html>
+<!--[if IE 9]>    <html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation project</title>
+    <!-- build:css css/app.min.css -->
+    
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/app_override.css">
+    <!-- endbuild -->
+    <!-- build:js js/vendor/modernizr.min.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">Nairobi Traffic Tracker</a></h1>
+        </li>
+      </ul>
+
+      
+    </nav>
+
+    <div class="row">
+      <h2>So, Traffic Sucks, Right?</h2>
+      <div data-alert class="alert-box">
+        Disclaimer: There are a lot of disclaimers, see below*
+        <a href="#" class="close">&times;</a>
+      </div>
+      <div class="small-12 large-8 columns">
+        <h5>Danger Zone <small>Traffic deaths...on a map!</small></h5>
+        <div id="map-canvas" style="height:400px; margin-bottom: 20px;">Loading map...</div>
+        <p>This is a live demo of a pre-pre-pre alpha version of the CrisisNET
+          API. The map shows historical traffic incident data from Kenya's 
+          Open Data initiative, and on the right there is a feed of real-time 
+          traffic complaints near Nairobi retrieved from Twitter and Facebook.</p>
+        <p>* Now about those disclaimers.</p>
+        <ol>
+          <li>No offense, Nairobi.</li>
+          <li>A lot of the real-time data isn't relevant. This is something we're working on</li>
+          <li>An example API call is below, but <strong>I promise this server will go away, as will all the data</strong>, so don't go using it for anything.</li>
+        </ol>
+        <pre class="js">
+$.getJSON("http://localhost:8083/item?tags=accident&location=36.821946,-1.292066", 
+  function(data) {
+    console.log(data);
+  });
+        </pre>
+      </div>
+      <div class="small-12 large-4 columns">
+        <h5>Traffic Ticker <small>Complaining on the Internets</small></h5>
+        <ul class="no-bullet" id="traffic-chatter"></ul>
+      </div>
+    </div>
+
+        <!--
+        <h1>Grunt tasks:</h1>
+        <ul>
+          <li>'grunt' - watching (Sass, Server on 127.0.0.1:9000 with LiveReload)</li>
+          <li>'grunt build' - Sass</li>
+          <li>'grunt validate-js' - JSHint</li>
+          <li>'grunt publish' - dist directory</li>
+          <li>'grunt server-dist' - server on 127.0.0.1:9001 - dist directory (preview only)</li>
+        </ul>
+        <h2 class="text-right">
+          <a href="https://github.com/juliancwirko/generator-zf5">github</a>
+        </h2>
+        -->
+    
+    <script src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <!-- build:js js/vendor/jquery.min.js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbuild -->
+    <!-- build:js js/foundation/foundation.min.js -->
+    <script src="bower_components/foundation/js/foundation.js"></script>
+    <!-- endbuild -->
+    <script src="js/markercluster.js"></script>
+    <script src="js/snippet.js"></script>
+    <!-- build:js js/app.min.js -->
+    <script src="js/app.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
