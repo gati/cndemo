@@ -62,7 +62,7 @@ var app = (function() {
   		var arr = data.reverse();
 
   		$.each(arr, function(idx, obj) {
-  			trafficChatterEl.prepend("<li class='active'>"+obj.content+"<br><small> at "+obj.publishedAt+" from "+obj.source+"</small></li>");
+  			trafficChatterEl.prepend("<li class='active'>"+obj.content+"<br><small>"+moment(obj.publishedAt).from()+" from "+obj.source+"</small></li>");
   		});
 
   		setTimeout(function() {
